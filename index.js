@@ -2,6 +2,8 @@ const fs = require('fs')
 const cheerio = require('cheerio')
 const isSVG = require('is-svg')
 const uniq = require('lodash.uniq')
+const compact = require('lodash.compact')
+const chroma = require('chroma-js')
 
 module.exports = function svgPalette(input) {
 
@@ -12,16 +14,20 @@ module.exports = function svgPalette(input) {
   const $ = cheerio.load(input)
 
   const fills = $('[fill]').map(function (i, el) {
-    return $(this).attr('fill')
+    var color = $(this).attr('fill')
+    if (color === 'none') return
+    return chroma(color)
   }).get()
 
   const strokes = $('[stroke]').map(function (i, el) {
-    return $(this).attr('stroke')
+    var color = $(this).attr('stroke')
+    if (color === 'none') return
+    return chroma(color)
   }).get()
 
   return {
-    fills: uniq(fills),
-    strokes: uniq(strokes)
+    fills: compact(uniq(fills)),
+    strokes: compact(uniq(strokes))
   }
 
 }
