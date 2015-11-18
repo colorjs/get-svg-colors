@@ -31,6 +31,12 @@ describe('get-svg-colors', function(){
     assert(colors.fills[0].hex().match(hexy))
   })
 
-
+  it('accepts a `flat` option to return a single array include fill and stroke colors', function() {
+    var colors = getColors(__dirname + '/fixtures/australia.svg', {flat: true})
+    var hexy = /^#[0-9a-f]{3,6}$/i
+    assert(Array.isArray(colors))
+    assert(colors.length)
+    assert(colors[0].hex().match(hexy))
+  })
 
 })

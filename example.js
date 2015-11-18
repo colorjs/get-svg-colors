@@ -19,3 +19,7 @@ colors.strokes.map(color => color.hex())
 // Crazy stuff...
 colors.fills[0].alpha(0.5).css();
 // => 'rgb(0,128,128)'
+
+// Pass the `flat` option to get back a single array including
+// de-duped fills and strokes together
+const colors = getColors('<svg...>', {flat: true})

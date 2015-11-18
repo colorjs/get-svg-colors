@@ -5,7 +5,7 @@ const uniq = require('lodash.uniq')
 const compact = require('lodash.compact')
 const chroma = require('chroma-js')
 
-module.exports = function svgPalette(input) {
+module.exports = function getSvgColors(input, options) {
 
   if (!isSVG(input)) {
     input = fs.readFileSync(input, 'utf8')
@@ -24,6 +24,10 @@ module.exports = function svgPalette(input) {
     if (color === 'none') return
     return chroma(color)
   }).get()
+
+  if (options && options.flat) {
+    return compact(uniq(fills.concat(strokes)))
+  }
 
   return {
     fills: compact(uniq(fills)),
