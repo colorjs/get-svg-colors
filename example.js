@@ -23,3 +23,4 @@ colors.fills[0].alpha(0.5).css();
 // Pass the `flat` option to get back a single array including
 // de-duped fills and strokes together
 const colors = getColors('<svg...>', {flat: true})
+// => [...]
