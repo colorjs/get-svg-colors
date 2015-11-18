@@ -1,6 +1,6 @@
 {
   "name": "get-svg-colors",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Extract stroke and fill colors from SVG files",
   "main": "index.js",
   "scripts": {
