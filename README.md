@@ -1,10 +1,8 @@
 # get-svg-colors
 
-Extract stroke and fill colors from SVG files
+Extract stroke and fill colors from SVG files. Designed for use in node, not the browser.
 
 ## Installation
-
-Download node at [nodejs.org](http://nodejs.org) and install it, if you haven't already.
 
 ```sh
 npm install get-svg-colors --save
