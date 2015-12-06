@@ -3,6 +3,7 @@
 const fs = require('fs')
 const assert = require('assert')
 const getColors = require('..')
+const hexy = /^#[0-9a-f]{3,6}$/i
 
 describe('get-svg-colors', function(){
 
@@ -26,17 +27,23 @@ describe('get-svg-colors', function(){
 
   it('returns chroma-js color objects', function() {
     var colors = getColors(__dirname + '/fixtures/australia.svg')
-    var hexy = /^#[0-9a-f]{3,6}$/i
     assert(colors.strokes[0].hex().match(hexy))
     assert(colors.fills[0].hex().match(hexy))
   })
 
   it('accepts a `flat` option to return a single array include fill and stroke colors', function() {
     var colors = getColors(__dirname + '/fixtures/australia.svg', {flat: true})
-    var hexy = /^#[0-9a-f]{3,6}$/i
     assert(Array.isArray(colors))
     assert(colors.length)
     assert(colors[0].hex().match(hexy))
+  })
+
+  it('extracts inline styles', function() {
+    var colors = getColors(__dirname + '/fixtures/inline-styles.svg')
+    var fills = colors.fills.map(color => color.hex())
+    var strokes = colors.strokes.map(color => color.hex())
+    assert(fills.indexOf('#ffcc00') > -1)
+    assert(strokes.indexOf('#803300') > -1)
   })
 
 })
