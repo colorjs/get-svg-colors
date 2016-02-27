@@ -46,4 +46,16 @@ describe('get-svg-colors', function(){
     assert(strokes.indexOf('#803300') > -1)
   })
 
+  it('supports radial gradients', function() {
+    var colors = getColors(__dirname + '/fixtures/radial-gradient.svg')
+    var stops = colors.stops.map(color => color.hex())
+    assert(stops.indexOf('#ffffff') > -1)
+    assert(stops.indexOf('#fce0e0') > -1)
+
+    var colors = getColors(__dirname + '/fixtures/radial-gradient.svg', {flat: true})
+    colors = colors.map(color => color.hex())
+    assert(colors.indexOf('#ffffff') > -1)
+    assert(colors.indexOf('#fce0e0') > -1)
+  })
+
 })
