@@ -1,4 +1,4 @@
-const getColors = require('./')
+const getColors = require('.')
 
 // Give it an SVG filename
 const colors = getColors(__dirname + '/australia.svg')
