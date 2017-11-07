@@ -34,16 +34,17 @@ module.exports = function getSvgColors(input, options) {
     return color($(this).attr('stroke'))
   }).get()
 
-  // Find `fill` and `stroke` within inline styles
-  $('[style]').each(function (i, el) {
-    fills.push(color($(this).css('fill')))
-    strokes.push(color($(this).css('stroke')))
-  })
-
   // Find elements with a `stop-color` attribute (gradients)
   var stops = $('[stop-color]').map(function (i, el) {
     return color($(this).attr('stop-color'))
   }).get()
+
+  // Find `fill`, `stroke` and `stops` within inline styles
+  $('[style]').each(function (i, el) {
+    fills.push(color($(this).css('fill')))
+    strokes.push(color($(this).css('stroke')))
+    stops.push(color($(this).css('stop-color')))
+  })
 
   if (options && options.flat) {
     return compact(uniq(fills.concat(strokes).concat(stops)))
