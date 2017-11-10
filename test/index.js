@@ -42,8 +42,10 @@ describe('get-svg-colors', function(){
     var colors = getColors(__dirname + '/fixtures/inline-styles.svg')
     var fills = colors.fills.map(color => color.hex())
     var strokes = colors.strokes.map(color => color.hex())
+    var stops = colors.stops.map(color => color.hex())
     assert(fills.indexOf('#ffcc00') > -1)
     assert(strokes.indexOf('#803300') > -1)
+    assert(stops.indexOf('#000000') > -1)
   })
 
   it('supports radial gradients', function() {
