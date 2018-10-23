@@ -14,7 +14,7 @@
     "chroma-js": "^1.1.1",
     "is-svg": "^3.0.0",
     "lodash.compact": "^3.0.0",
-    "lodash.uniq": "^3.2.2"
+    "lodash.uniq": "^4.5.0"
   },
   "devDependencies": {
     "mocha": "^5.2.0"
