@@ -1,11 +1,13 @@
 {
   "name": "get-svg-colors",
-  "version": "1.4.0",
+  "version": "0.0.0-development",
   "description": "Extract stroke and fill colors from SVG files",
   "repository": "github:zeke/get-svg-colors",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "travis-deploy-once": "travis-deploy-once",
+    "semantic-release": "semantic-release"
   },
   "author": "",
   "license": "ISC",
@@ -17,6 +19,8 @@
     "lodash.uniq": "^4.5.0"
   },
   "devDependencies": {
-    "mocha": "^5.2.0"
+    "mocha": "^5.2.0",
+    "travis-deploy-once": "^5.0.9",
+    "semantic-release": "^15.10.5"
   }
 }
