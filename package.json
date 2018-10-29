@@ -2,7 +2,7 @@
   "name": "get-svg-colors",
   "version": "0.0.0-development",
   "description": "Extract stroke and fill colors from SVG files",
-  "repository": "github:zeke/get-svg-colors",
+  "repository": "github:colorjs/get-svg-colors",
   "main": "index.js",
   "scripts": {
     "test": "mocha",
