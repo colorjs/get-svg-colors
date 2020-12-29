@@ -21,6 +21,6 @@
   "devDependencies": {
     "mocha": "^6.0.0",
     "travis-deploy-once": "^5.0.9",
-    "semantic-release": "^15.10.5"
+    "semantic-release": "^17.3.1"
   }
 }
