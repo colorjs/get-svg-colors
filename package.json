@@ -1,13 +1,11 @@
 {
   "name": "get-svg-colors",
-  "version": "0.0.0",
+  "version": "2.0.0",
   "description": "Extract stroke and fill colors from SVG files",
   "repository": "github:colorjs/get-svg-colors",
   "main": "index.js",
   "scripts": {
-    "test": "mocha",
-    "travis-deploy-once": "travis-deploy-once",
-    "semantic-release": "semantic-release"
+    "test": "mocha"
   },
   "author": "",
   "license": "ISC",
@@ -19,8 +17,6 @@
     "lodash.uniq": "^4.5.0"
   },
   "devDependencies": {
-    "mocha": "^6.0.0",
-    "travis-deploy-once": "^5.0.9",
-    "semantic-release": "^15.10.5"
+    "mocha": "^6.0.0"
   }
 }
