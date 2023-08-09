@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cheerio": "^0.22.0",
+    "cheerio": "1.0.0-rc.12",
     "chroma-js": "^2.0.3",
     "is-svg": "^4.3.1",
     "lodash.compact": "^3.0.0",
